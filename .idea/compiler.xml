@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="crop-inventory-service" />
+        <module name="sensor-telemetry-service" />
         <module name="config-server" />
         <module name="zone-service" />
         <module name="service-registry" />
@@ -19,6 +20,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="crop-inventory-service" options="-parameters" />
+      <module name="sensor-telemetry-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
       <module name="zone-service" options="-parameters" />
     </option>
