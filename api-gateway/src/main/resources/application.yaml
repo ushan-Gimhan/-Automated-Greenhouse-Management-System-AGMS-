@@ -6,17 +6,22 @@ spring:
     name: api-gateway
 
   cloud:
+    # Config Server
+    config:
+      uri: http://localhost:8888
+
     gateway:
+      discovery:
+        locator:
+          enabled: true # find Eureka services
+
       routes:
         - id: zone-service
-          uri: lb://ZONE-SERVICE
+          uri: lb://ZONE-SERVICE # 'lb://'Load Balancer
           predicates:
             - Path=/api/zones/**
 
-    # Enable discovery client to fetch services from Eureka
-    discovery:
-      enabled: true
-
+# Eureka Client settings
 eureka:
   client:
     service-url:
