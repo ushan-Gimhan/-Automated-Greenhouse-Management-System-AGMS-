@@ -1,41 +1,8 @@
 spring:
   application:
-    name: zone-service   # Unique service name for Eureka
-  datasource:
-    url: jdbc:mysql://localhost:3306/agms_db  # Replace with your DB
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update   # use 'create' for first time, 'update' for ongoing
-    show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    name: zone-service
+  config:
+    import: "configserver:http://localhost:8888" #settings
 
 server:
   port: 8081
-
-# Config Server
-  cloud:
-    config:
-      uri: http://localhost:8888   # Config Server URL
-      fail-fast: true              # Fail startup if config server not reachable
-
-# Eureka Client
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-
-# Optional: Feign settings
-feign:
-  hystrix:
-    enabled: true  # Enable circuit breaker for Feign calls (optional)
-
-# Logging level (optional)
-logging:
-  level:
-    org.springframework.web: INFO
-    com.agms: DEBUG

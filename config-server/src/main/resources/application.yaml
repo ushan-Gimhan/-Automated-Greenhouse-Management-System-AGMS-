@@ -6,4 +6,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ushan-Gimhan/agms-config
+          uri: https://github.com/ushan-Gimhan/agms-config-repo.git
+          default-label: main # GitHub branch 'main'
+          force-pull: true # GitHub
