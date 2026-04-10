@@ -1,5 +1,8 @@
 package com.agms.crop_inventory_service.dto;
 
+import com.agms.crop_inventory_service.entity.Status;
+import lombok.Data;
+
 @Data
 public class CropRequest {
     private String cropName;
